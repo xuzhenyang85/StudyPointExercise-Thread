@@ -10,7 +10,7 @@ public class Tester {
   
   public static void main(String[] args) throws InterruptedException {
     //This represent the Queue in the exercise-figure. Observe the size of the Queue
-    ArrayBlockingQueue<Integer> numbers = new ArrayBlockingQueue(5);
+    ArrayBlockingQueue<Integer> numbers = new ArrayBlockingQueue(100);
     
     ExecutorService es = Executors.newCachedThreadPool();
     //Create and start four producers (P1-P4 in the exercise-figure)

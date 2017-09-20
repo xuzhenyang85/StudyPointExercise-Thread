@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class RandomNumberConsumer implements Runnable {
 
-    ArrayBlockingQueue<Integer> numbersProduced;
+    protected ArrayBlockingQueue<Integer> numbersProduced;
 
     public RandomNumberConsumer(ArrayBlockingQueue<Integer> numbersProduced) {
         this.numbersProduced = numbersProduced;
@@ -22,12 +22,23 @@ public class RandomNumberConsumer implements Runnable {
     public void run() {
         //In this exercise, we start four threads, each producing 100 numbers, so we know how much to consume
         for (int i = 0; i < 400; i++) {
-            if(numbersProduced.element()<=50){
-                below50.add(numbersProduced.element());
-            } else {
-                aboveOr50.add(numbersProduced.element());
+            try {
+                int value = numbersProduced.take();
+                if(value <= 50){
+                    below50.add(value);
+                }
+                else{
+                    aboveOr50.add(value);
+                }
+            } catch (InterruptedException ex) {
+                Logger.getLogger(RandomNumberConsumer.class.getName()).log(Level.SEVERE, null, ex);
             }
-            sumTotal += below50.get(i) + aboveOr50.get(i);
+        }
+        for (int i = 0; i < below50.size(); i++) {
+            sumTotal += below50.get(i);
+            for (int j = 0; j < aboveOr50.size(); j++) {
+                sumTotal += aboveOr50.get(i);
+            }
         }
     }
 

@@ -53,8 +53,31 @@ c)
 d) Den endelige resultatet er performance efter brugt thread, blev resultatet halveret. 
 
 
-###EExercise 2(Producer-Consumer) 
+###Exercise 2(Producer-Consumer) 
+
+a) Hvorfor bruger vi BlockingQueue interface?
+Det blev mest brugt i forbindelse med thread produce objects. BlockingQueue vil løse Producer-Consumer problem, hvor producer tråd putter objekter ind, og consumer tråd sletter objekterne når plads er fyldt. 
+
+##Exercise 3(Producer-Consumer) 
+
+a) Fra den tidligere exercise viser sig at multi-thread vil gøre performance langt hurtigere, især denne exercise er det godt at bruge tråd. 
+
+ Hvis vi skal være 100% sikker på, at vi får lov til at indsætte et element ind i queue, er det godt at bruge put(), den vil vente med at indsætte når der er ledig plads.
+
+ take() fjerner altid header(først) af køen, hvis køen er tom, så venter indtil der er noget.
+
+b) Compile and run Test.java
+
+c) Completed RandomNumberProducer class (DONE)
+
+d) Completed RandomNumberConsumer class (DONE)
+
+f) Resultat:
+Total of all random numbers: 3039226
+Number of random numbers below 50: 197
+Number of random numbers >= 50: 203
 
 
+##Exercise 4
 
-# StudyPointExercise-Thread
+
