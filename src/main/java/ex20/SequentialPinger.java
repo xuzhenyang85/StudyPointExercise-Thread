@@ -70,7 +70,7 @@ public class SequentialPinger {
             //System.out.println(url + "\t\tStatus:" + status);
         }
         for (int i = 0; i < fureList.size(); i++) {
-            System.out.println("URL: "+ hostList[i]+" Status: "+fureList.get(i).get());
+            System.out.println(hostList[i]+"\t\tStatus: "+fureList.get(i).get());
         }
         
         pool.shutdown();
