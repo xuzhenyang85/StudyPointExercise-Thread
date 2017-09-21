@@ -123,4 +123,44 @@ b) DeadLockDetector.java DONE
 
 c)
 
+Day3
+
+### Exercise 1 SequentialPinger
+Resultat
+```
+URL: http://crunchify.com Status: Green
+URL: http://yahoo.com Status: Redirect
+URL: http://www.ebay.com Status: Redirect
+URL: http://google.com Status: Green
+URL: http://www.example.co Status: ->Red<-
+URL: https://paypal.com Status: Green
+URL: http://bing.com/ Status: Green
+URL: http://techcrunch.com/ Status: Redirect
+URL: http://mashable.com/ Status: Green
+URL: http://thenextweb.com/ Status: Redirect
+URL: http://wordpress.com/ Status: Redirect
+URL: http://cphbusiness.dk/ Status: Redirect
+URL: http://example.com/ Status: Green
+URL: http://sjsu.edu/ Status: Green
+URL: http://ebay.co.uk/ Status: Redirect
+URL: http://google.co.uk/ Status: Green
+URL: http://www.wikipedia.org/ Status: Redirect
+URL: http://dr.dk Status: Green
+URL: http://pol.dk Status: Green
+URL: https://www.google.dk Status: Green
+URL: http://phoronix.com Status: Redirect
+URL: http://www.webupd8.org/ Status: Green
+URL: https://studypoint-plaul.rhcloud.com/ Status: ->Red<-
+URL: http://stackoverflow.com Status: Redirect
+URL: http://docs.oracle.com Status: Green
+URL: https://fronter.com Status: Error
+URL: http://imgur.com/ Status: Redirect
+URL: http://www.imagemagick.org Status: Green
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time: 4.413s
+```
+
+
 
