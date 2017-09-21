@@ -58,7 +58,7 @@ d) Den endelige resultatet er performance efter brugt thread, blev resultatet ha
 a) Hvorfor bruger vi BlockingQueue interface?
 Det blev mest brugt i forbindelse med thread produce objects. BlockingQueue vil løse Producer-Consumer problem, hvor producer tråd putter objekter ind, og consumer tråd sletter objekterne når plads er fyldt. 
 
-## Exercise 3(Producer-Consumer) 
+### Exercise 3(Producer-Consumer) 
 
 [Exercise 3 (Producer-Consumer)](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day2/rndnumberprodcon)
 
@@ -66,7 +66,7 @@ a) Fra den tidligere exercise viser sig at multi-thread vil gøre performance la
 
  Hvis vi skal være 100% sikker på, at vi får lov til at indsætte et element ind i queue, er det godt at bruge `put()`, den vil vente med at indsætte når der er ledig plads.
 
- `take() fjerner altid header(først) af køen, hvis køen er tom, så venter indtil der er noget.
+ `take()` fjerner altid header(først) af køen, hvis køen er tom, så venter indtil der er noget.
 
 b) Compile and run Test.java
 
@@ -89,13 +89,38 @@ b) Complete DocumentProducer (DONE)
 
 c) Complete DocumentConsumer (DONE)
 
-d) 
+d) Resultat:
 
 - Resultatet blev printet i Consumer tråd
 - Main tråd oprettet URL's til Q1
-- 
+```
+Closing Down
+Title: Google
+TotalDivs: 206
+Title: FCK.DK | Officiel hjemmeside F.C. København | Danske mestre og pokalvindere 2017. | F.C. København
+TotalDivs: 464
+Title: Moodle
+TotalDivs: 33
+Title: TV 2 - bedst på breaking og live
+TotalDivs: 174
+Title: Forsiden - politiken.dk
+TotalDivs: 722
+Title: DR Forsiden - TV, Radio, Nyheder og meget mere fra dr.dk
+TotalDivs: 373
+Title: Twitch
+TotalDivs: 10
+Title: YouTube
+TotalDivs: 12
+```
 
 ## Exercise 5 (Deadlock detection)
 
-a) 
+a) Resultatet er ikke hvad blev forventet
+- Låserne blev ikke unlock i både ResourceUser1 og ResourceUser2s 
+- Kun sektion blev låst, men de ikke instance objekter. Den samme værdi blev brugt af de to tråde, her får vi en Race Condition.
+
+b) DeadLockDetector.java DONE
+
+c)
+
 

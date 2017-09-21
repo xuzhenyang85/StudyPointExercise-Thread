@@ -22,13 +22,14 @@ class ResourceUser1 extends Thread {
         words.add("Peter");
         words.add("Kurt");
         words.add("Hanne");
+        resource.releaseResourceWords();
         Thread.sleep(1);//Simulate that using the resource takes som time 
         System.out.println(Thread.currentThread().getName()+ " Get resource NUMBERS");
         List<Integer> numbers = resource.getResourceNumbers();
         numbers.add(1);
         numbers.add(2);
         numbers.add(3);
-        
+        resource.releaseResourceNumbers();
         System.out.println(Thread.currentThread().getName() + " Done with resources");
       } catch (InterruptedException ex) {
         Logger.getLogger(ResourceUser1.class.getName()).log(Level.SEVERE, null, ex);

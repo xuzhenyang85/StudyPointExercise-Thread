@@ -2,13 +2,20 @@ package day2.writer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import sun.swing.BakedArrayList;
 
 /**
  * @author plaul1
@@ -21,12 +28,15 @@ public class TextWriterForm extends javax.swing.JFrame {
    * Creates new form TextWriterForm
    */
   public TextWriterForm() {
+
     initComponents();
     txtNewLine.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         addLine();
+        backup();
       }
+    
     });
     
   }
@@ -106,6 +116,20 @@ public class TextWriterForm extends javax.swing.JFrame {
     txtNewLine.setText("");
   }
 
+  private void backup(){
+      Thread backup = new Thread(() -> {
+        try {
+            FileWriter writer;
+            writer = new FileWriter("backup.txt",false);
+            PrintWriter out = new PrintWriter(writer);
+            out.println("This is written to the file");
+            out.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TextWriterForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    });
+    backup.start();
+  }
   private void btnNewLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewLineActionPerformed
     addLine();
   }//GEN-LAST:event_btnNewLineActionPerformed
