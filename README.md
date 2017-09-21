@@ -83,4 +83,19 @@ Number of random numbers >= 50: 203
 
 ## Exercise 4
 
+a) Execute day2.webscrapprodcon. (DONE)
+
+b) Complete DocumentProducer (DONE)
+
+c) Complete DocumentConsumer (DONE)
+
+d) 
+
+- Resultatet blev printet i Consumer tråd
+- Main tråd oprettet URL's til Q1
+- 
+
+## Exercise 5 (Deadlock detection)
+
+a) 
 

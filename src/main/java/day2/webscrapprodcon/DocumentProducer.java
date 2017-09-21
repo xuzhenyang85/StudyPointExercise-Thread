@@ -23,14 +23,16 @@ public class DocumentProducer implements Runnable {
     boolean moreUrlsToFecth = true;
     while (moreUrlsToFecth) {
       try {
-        String url = null;//TODO: Use the right method on urlsToUse to set this value to either a string (with a url) or null  
-        
+        //String url = null;//TODO: Use the right method on urlsToUse to set this value to either a string (with a url) or null  
+        String url = urlsToUse.take();
         if (url == null) {
           moreUrlsToFecth = false;
+          urlsToUse.remove();
         } else {
 
           doc = Jsoup.connect(url).get(); 
           //TODO Use the right method on producedDocuments to add this doc to the queue
+          producedDocuments.put(doc);
 
         }
       } catch(Exception ex) {

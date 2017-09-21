@@ -19,7 +19,11 @@ public class Tester {
     urls.add("http://politiken.dk");
     urls.add("https://cphbusiness.mrooms.net/");
     //TODO: Add some more URL's of your own choice
-
+    urls.add("http://tv2.dk/");
+    urls.add("http://www.dr.dk/");
+    urls.add("https://www.twitch.tv/");
+    urls.add("https://www.youtube.com/");
+    
     //Holds the Documents produced by the producers. This is Q2 in the exercise figure
     ArrayBlockingQueue<Document> producedDocuments = new ArrayBlockingQueue(10);
    
