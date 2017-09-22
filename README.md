@@ -4,40 +4,44 @@
 
 [day1.create_start_end_threads](https://github.com/xuzhenyang85/StudyPointExercise-Thread/blob/master/src/main/java/day1/thread/exercise1_create_start_end_threads.java)
 
-a) Forkert rækkeføgle under eksekvering, tråd 2 og 3 blev kaldt skiftevis og stykkevis mens tråd 1 var i gang med at eksekvere. Det viser at hver tråde får en del af cpu tid, programmet printer forskellige tal ud hver mange det ekserverer, hvor resultatet bliver forskellige og ukontrolleret.
+a) Trådene kørt skiftevis og stykkevis, hver tråd får en del af CPU tid, hvor resultatet er forskellige og ukontrolleret.
 
-b) Der er 3 muligheder for dette: Synchronized Block, Volatile og Lock. Lock keyword kan vi får lov til at låse en af de tråde fast og gemfører tråden færdig, derefter unlock den og videre til de næste tråde.
+b) Her vises flere muligheder
+- Synchronized Block
+- Volatile
+- Lock 
+Her har jeg brugt Reentrantlock(Lock) til at låse sektioner.  
 
-c) Jeg har valgt at bruge Lock metode til at undgå disse fejler, det sikker sig at trådene kører efter hvad jeg har forventet. Nu er dette kun en test kode, hvor jeg ret sikker på at der blev ikke kastet noget exception midt i nogen af den. Lock metode har løst denne opgave, hvor alle tråde eksekverer som de børt være. 
+c) Reentrantlock blev oprettet her for at metoderne kan køre efter hinanden. 
 
 
 ### Exercise 2 (race condition)
 
 [day1.even](https://github.com/xuzhenyang85/StudyPointExercise-Thread/blob/master/src/main/java/day1/thread/Even.java)
-a) Jeg har være meget heldig, efter 3. gange har jeg fået noget forskellige nummer, hvor tråd 1 får to i resultatet, og tråd 2 stadig får 4. Dette er en race condition, hvor flere tråde tilgå i en samme variabel, den variabels opdatering blev tabt.
+a) Der blev lavet en loop omkring de 2 tråde, jeg kan desværre ikke finde ulig tal.
 
-b) Dette probleme sker meget ofte, når flere tråde blev kørt af den samme variabel.
+b) Det mener jeg ikke.
 
-c) Det fixet ved at brug synchronized Lock i next() metode.
+c) Det fixet ved at brug synchronized Lock i ´next()´ metode.
 
 d) Race condition er væk efter jeg har sat synchronized Lock til at låse next() metode. Programmmet kører efter forventningen.  
 
-Exercise 3 (Blocking the GUI-thread)
+### Exercise 3 (Blocking the GUI-thread)
 [day1.balls](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/balls)
 
-Der blev lagt en Extends Thread i Ball.java, derefter ændret ball.run() til ball.start(), hvor den starter en tråd for sig selv, og ikke længere blokerer main tråd. Problemet er fixet.
+Der blev lagt en Extends Thread i Ball.java, derefter ændret ´ball.run()´ til ´ball.start()´, hvor den starter en tråd for sig selv, og ikke længere blokerer main tråd. Problemet er fixet.
 
 
-### EExercise 4
+### Exercise 4
 Swing
 
 ### Exercise 5
 [day1.turnstiles](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/turnstiles)
 a) Desværre, det endelige resultat er 36369, meget mindre end 40000.
 
-b) count variable gik i tabt.
+b) ´count´ variable gik i tabt.
 
-c) Tilføjet synchronized ved incr() i TurnstileCounter, problemet er løst.
+c) Tilføjet synchronized ved ´incr()´ i TurnstileCounter, problemet er løst.
 
 ### Exercise 6 (race condition) RED
 [day1.bank](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/bank)
