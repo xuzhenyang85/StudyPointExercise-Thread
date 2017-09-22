@@ -19,9 +19,9 @@ c) Reentrantlock blev oprettet her for at metoderne kan køre efter hinanden.
 
 [day1.even](https://github.com/xuzhenyang85/StudyPointExercise-Thread/blob/master/src/main/java/day1/thread/Even.java)
 
-a) Der blev lavet en loop omkring de 2 tråde, jeg kan desværre ikke finde ulig tal.
+a) Jeg kan desværre ikke finde noget ulig tal.
 
-b) Det mener jeg ikke.
+b) Måske, jeg får altid lig tal, men det kan godt sker i andre computer.
 
 c) Det fixet ved at brug synchronized Lock i ´next()´ metode.
 
@@ -35,7 +35,8 @@ Der blev lagt en Extends Thread i Ball.java, derefter ændret ´ball.run()´ til
 
 
 ### Exercise 4
-Swing
+
+[day1.Fibonacci](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/fib)
 
 ### Exercise 5
 
@@ -142,11 +143,12 @@ a) Resultatet er ikke hvad blev forventet
 
 b) DeadLockDetector.java DONE
 
-c)
 
 Day3
 
 ### Exercise 1 SequentialPinger
+
+[day3.SequentialPinger](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/ex20)
 
 Resultat
 ```
