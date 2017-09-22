@@ -18,6 +18,7 @@ c) Reentrantlock blev oprettet her for at metoderne kan køre efter hinanden.
 ### Exercise 2 (race condition)
 
 [day1.even](https://github.com/xuzhenyang85/StudyPointExercise-Thread/blob/master/src/main/java/day1/thread/Even.java)
+
 a) Der blev lavet en loop omkring de 2 tråde, jeg kan desværre ikke finde ulig tal.
 
 b) Det mener jeg ikke.
@@ -27,6 +28,7 @@ c) Det fixet ved at brug synchronized Lock i ´next()´ metode.
 d) Race condition er væk efter jeg har sat synchronized Lock til at låse next() metode. Programmmet kører efter forventningen.  
 
 ### Exercise 3 (Blocking the GUI-thread)
+
 [day1.balls](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/balls)
 
 Der blev lagt en Extends Thread i Ball.java, derefter ændret ´ball.run()´ til ´ball.start()´, hvor den starter en tråd for sig selv, og ikke længere blokerer main tråd. Problemet er fixet.
@@ -36,19 +38,25 @@ Der blev lagt en Extends Thread i Ball.java, derefter ændret ´ball.run()´ til
 Swing
 
 ### Exercise 5
+
 [day1.turnstiles](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/turnstiles)
+
 a) Desværre, det endelige resultat er 36369, meget mindre end 40000.
 
 b) ´count´ variable gik i tabt.
 
 c) Tilføjet synchronized ved ´incr()´ i TurnstileCounter, problemet er løst.
 
-### Exercise 6 (race condition) RED
+### Exercise 6 (race condition) 
+
 [day1.bank](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day1/bank)
+
 Der blev tilføjet synchronized i deposit() i BankAccountUnsynchronized.java, og inde i den har jeg tilføjet lock()
 
 ### Exercise 1 Day 2
+
 [day2.webscraper](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day2/webscraper)
+
 a) Når vi trækker noget fra andre hjemmesider, samtidlig bruger run-metode er der stort risiko for at blokere vores main tråd, det skal vi helst undgå. 
 
 b) Det er bare en linie kode extends Thread 
@@ -63,7 +71,9 @@ d) Den endelige resultatet er performance efter brugt thread, blev resultatet ha
 
 
 ### Exercise 2(Producer-Consumer) 
+
 [day2.producer_consumer](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day2/producer_consumer)
+
 a) Hvorfor bruger vi BlockingQueue interface?
 Det blev mest brugt i forbindelse med thread produce objects. BlockingQueue vil løse Producer-Consumer problem, hvor producer tråd putter objekter ind, og consumer tråd sletter objekterne når plads er fyldt. 
 
@@ -91,7 +101,9 @@ Number of random numbers >= 50: 203
 ```
 
 ## Exercise 4
+
 [day2.webscrapprodcon](https://github.com/xuzhenyang85/StudyPointExercise-Thread/tree/master/src/main/java/day2/webscrapprodcon)
+
 a) Execute day2.webscrapprodcon. (DONE)
 
 b) Complete DocumentProducer (DONE)
@@ -135,6 +147,7 @@ c)
 Day3
 
 ### Exercise 1 SequentialPinger
+
 Resultat
 ```
 URL: http://crunchify.com Status: Green
